@@ -24,15 +24,17 @@ for mes in lista_meses:
 # verificar SE algum valor algum valor na tabela de vendas é igual ou maior que 55.000
 
 # se for maior que 55.000, enviar um sms com nome, mes e as vendas dele
-account_sid = 'ACce2d99f06f2e0fd4a02bb0cd27e23236'
-auth_token = '00155c698412e7a75e4401e5367b4ea2'
+
+
+account_sid = ' ' # para o account_sid e euth_token é preciso fazer uma conta no twilio!
+auth_token = ' ' 
 client = Client(account_sid, auth_token)
 
 message = client.messages \
                 .create(
                      body= f"No mês de {mes} o vendedor {vendedor} vendeu um total de R${vendas} , ultrapassando a meta!",
-                     from_='+15139603382',
-                     to='+5512996719779'
+                     from_=' ', #twilio também conesegue gerar um número para isso
+                     to=' ' # aqui é só adicionar um número cadastrado!
                  )
 
 print(message.sid)

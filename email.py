@@ -33,11 +33,11 @@ ticket_medio = (faturamento["Valor Final"] / quantidade["Quantidade"]).to_frame(
 ticket_medio = ticket_medio.rename(columns={0: "ticket"})
 print(ticket_medio)
 
-#enviar um email com o relatório ((código padrão para enviar os formulários por email (pip install pywin32))
+#enviar um email com o relatório (código padrão para enviar os formulários por email (pip install pywin32))
 
 outlook = win32.Dispatch("outlook.application")
 mail = outlook.CreateItem(0)
-mail.To = "vinihsr@hotmail.com"
+mail.To = " " # insira um email que vpcê tenha acesso!
 mail.Subject = "Relatório de vendas por loja"
 mail.HTMLBody = f'''
 <p>Olá</p>
